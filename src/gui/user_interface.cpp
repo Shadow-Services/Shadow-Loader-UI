@@ -212,7 +212,7 @@ void UI::Render()
        // cfg.SizePixels = 13 * fScale;
        // ImGui::GetIO().Fonts->AddFontDefault(&cfg);
     }
-#pragma warning(disable : 4996)
+
     {
         ImFontConfig fnt_cfg{};
         fnt_cfg.FontDataOwnedByAtlas = false;

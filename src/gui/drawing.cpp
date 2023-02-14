@@ -49,7 +49,7 @@ namespace ImGui {
         const ImRect image_bb(start, start + size);
         start = window->DC.CursorPos + padding; start.x += size.x + innerSpacing; if (size.y > textSize.y) start.y += (size.y - textSize.y) * .5f;
         ItemSize(bb);
-        if (!ItemAdd(bb, id))
+        if (!ItemAdd(bb, id)) 
             return false;
 
         bool hovered = false, held = false;
@@ -79,14 +79,14 @@ void drawing::Draw()
 		ImGui::Begin(lpWindowName, &bDraw, WindowFlags);
 		{
             ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 10.f);
-            ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(1, 1, 1, 0.4));
-			ImGui::ImageButtonWithText((PVOID)UI::gtaIcon, "     Grand Theft Auto V", ImVec2(116.4,66.4), ImVec2(0,0), ImVec2(1,1), 1.f);
+            ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(1.f, 1.f, 1.f, 0.4f));
+			ImGui::ImageButtonWithText((PVOID)UI::gtaIcon, "     Grand Theft Auto V", ImVec2(116.4f,66.4f), ImVec2(0.f,0.f), ImVec2(1.f,1.f), 1.f);
             ImGui::PopStyleVar(1);
             ImGui::PopStyleColor(1);
             ImGui::Text("Test");
 			ImGui::Text("Welcome back %s", std::string(GetUsername()).c_str());
 
-			ImGui::ListBox("", &g_moduleIndex, UI::ModulesCallback, &g_modules, g_modules.size(), 12);
+			ImGui::ListBox("", &g_moduleIndex, UI::ModulesCallback, &g_modules, g_modules.size(), (int)12);
 		}
 		ImGui::End();
 	}

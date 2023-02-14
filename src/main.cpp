@@ -5,6 +5,7 @@ t_Login Login; t_Logout Logout; t_Status GetStatus; t_Username GetUsername; t_Mo
 bool g_loggedIn = false;
 #ifdef _WINDLL
 
+
 BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpReserved)
 {
     if (fdwReason == DLL_PROCESS_ATTACH)
