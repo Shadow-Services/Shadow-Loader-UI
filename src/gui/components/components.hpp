@@ -1,7 +1,7 @@
 #pragma once
 #include <map>
 
-#include "globals.hpp"
+#include <globals.hpp>
 
 class components
 {

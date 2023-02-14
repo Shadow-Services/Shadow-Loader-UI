@@ -4,7 +4,7 @@
 
 #include <Windows.h>
 
-#include "globals.hpp"
+#include <globals.hpp>
 
 class Drawing
 {

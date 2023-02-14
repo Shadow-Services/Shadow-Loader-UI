@@ -1,6 +1,5 @@
-#include "globals.hpp"
-#include "fonts.hpp"
-#include "gta_v_logo.hpp"
+#include <globals.hpp>
+#include "../textures/gta_v_logo.hpp"
 
 
 ID3D11Device* UI::pd3dDevice = nullptr;

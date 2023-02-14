@@ -5,9 +5,11 @@
 #include <vector>
 #include <D3DX11tex.h>
 
-#include "user_interface.hpp"
-#include "utils.hpp"
-#include "Drawing.h"
+#include "gui/user_interface.hpp"
+#include "utilities/utils.hpp"
+#include "gui/Drawing.h"
+#include "fonts/fonts.hpp"
+
 
 #include "ImGui/imgui_impl_dx11.h"
 #include "ImGui/imgui_impl_win32.h"

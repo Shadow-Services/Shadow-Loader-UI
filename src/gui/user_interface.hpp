@@ -10,7 +10,6 @@
 
 #include "globals.hpp"
 #include "ImGui/imgui.h"
-#include "utils.hpp"
 
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 

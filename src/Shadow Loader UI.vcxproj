@@ -82,7 +82,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(DXSDK_DIR)Include</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDIR)\src;$(DXSDK_DIR)Include</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -146,7 +146,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Drawing.cpp" />
+    <ClCompile Include="fonts\storopia.cpp" />
+    <ClCompile Include="gui\components\tab.cpp" />
+    <ClCompile Include="gui\Drawing.cpp" />
+    <ClCompile Include="gui\user_interface.cpp" />
     <ClCompile Include="ImGui\imgui.cpp" />
     <ClCompile Include="ImGui\imgui_demo.cpp" />
     <ClCompile Include="ImGui\imgui_draw.cpp" />
@@ -155,17 +158,14 @@
     <ClCompile Include="ImGui\imgui_tables.cpp" />
     <ClCompile Include="ImGui\imgui_widgets.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="storopia.cpp" />
-    <ClCompile Include="tab.cpp" />
-    <ClCompile Include="user_interface.cpp" />
-    <ClCompile Include="utils.cpp" />
+    <ClCompile Include="utilities\utils.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="components.hpp" />
-    <ClInclude Include="Drawing.h" />
-    <ClInclude Include="fonts.hpp" />
+    <ClInclude Include="fonts\fonts.hpp" />
     <ClInclude Include="globals.hpp" />
-    <ClInclude Include="gta_v_logo.hpp" />
+    <ClInclude Include="gui\components\components.hpp" />
+    <ClInclude Include="gui\Drawing.h" />
+    <ClInclude Include="gui\user_interface.hpp" />
     <ClInclude Include="ImGui\imconfig.h" />
     <ClInclude Include="ImGui\imgui.h" />
     <ClInclude Include="ImGui\imgui_impl_dx11.h" />
@@ -174,8 +174,8 @@
     <ClInclude Include="ImGui\imstb_rectpack.h" />
     <ClInclude Include="ImGui\imstb_textedit.h" />
     <ClInclude Include="ImGui\imstb_truetype.h" />
-    <ClInclude Include="user_interface.hpp" />
-    <ClInclude Include="utils.hpp" />
+    <ClInclude Include="textures\gta_v_logo.hpp" />
+    <ClInclude Include="utilities\utils.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

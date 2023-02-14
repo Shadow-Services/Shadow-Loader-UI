@@ -1,6 +1,5 @@
 #include "globals.hpp"
 #include <Windows.h>
-#include "utils.hpp"
 
 t_Login Login; t_Logout Logout; t_Status GetStatus; t_Username GetUsername; t_Modules GetModules; t_Inject Inject;
 bool g_loggedIn = false;

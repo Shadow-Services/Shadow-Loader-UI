@@ -60,20 +60,20 @@
     <ClCompile Include="ImGui\imgui_impl_win32.cpp">
       <Filter>Header Files\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="utils.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tab.cpp">
+    <ClCompile Include="gui\components\tab.cpp">
       <Filter>Source Files\gui\components</Filter>
     </ClCompile>
-    <ClCompile Include="storopia.cpp">
+    <ClCompile Include="fonts\storopia.cpp">
       <Filter>Source Files\fonts</Filter>
     </ClCompile>
-    <ClCompile Include="user_interface.cpp">
+    <ClCompile Include="gui\Drawing.cpp">
       <Filter>Source Files\gui</Filter>
     </ClCompile>
-    <ClCompile Include="Drawing.cpp">
+    <ClCompile Include="gui\user_interface.cpp">
       <Filter>Source Files\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="utilities\utils.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -101,26 +101,26 @@
     <ClInclude Include="ImGui\imgui_impl_win32.h">
       <Filter>Header Files\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="utils.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="fonts.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="globals.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="gta_v_logo.hpp">
-      <Filter>Header Files\textures</Filter>
-    </ClInclude>
-    <ClInclude Include="user_interface.hpp">
-      <Filter>Header Files\gui</Filter>
-    </ClInclude>
-    <ClInclude Include="components.hpp">
+    <ClInclude Include="gui\components\components.hpp">
       <Filter>Header Files\gui\components</Filter>
     </ClInclude>
-    <ClInclude Include="Drawing.h">
+    <ClInclude Include="gui\Drawing.h">
       <Filter>Header Files\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\user_interface.hpp">
+      <Filter>Header Files\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="textures\gta_v_logo.hpp">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="fonts\fonts.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utilities\utils.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
