@@ -66,7 +66,7 @@
     <ClCompile Include="fonts\storopia.cpp">
       <Filter>Source Files\fonts</Filter>
     </ClCompile>
-    <ClCompile Include="gui\Drawing.cpp">
+    <ClCompile Include="gui\drawing.cpp">
       <Filter>Source Files\gui</Filter>
     </ClCompile>
     <ClCompile Include="gui\user_interface.cpp">
@@ -107,7 +107,7 @@
     <ClInclude Include="gui\components\components.hpp">
       <Filter>Header Files\gui\components</Filter>
     </ClInclude>
-    <ClInclude Include="gui\Drawing.h">
+    <ClInclude Include="gui\drawing.hpp">
       <Filter>Header Files\gui</Filter>
     </ClInclude>
     <ClInclude Include="gui\user_interface.hpp">

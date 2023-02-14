@@ -6,7 +6,7 @@
 
 #include <globals.hpp>
 
-class Drawing
+class drawing
 {
 private:
 	static LPCSTR lpWindowName;

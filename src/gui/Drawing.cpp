@@ -1,20 +1,20 @@
-#include "Drawing.h"
+#include "drawing.hpp"
 
-LPCSTR Drawing::lpWindowName = "Shadow Loader";
-ImVec2 Drawing::vWindowSize = { 600, 400 };
-ImGuiWindowFlags Drawing::WindowFlags = ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoResize;
-bool Drawing::bDraw = true;
+LPCSTR drawing::lpWindowName = "Shadow Loader";
+ImVec2 drawing::vWindowSize = { 600, 400 };
+ImGuiWindowFlags drawing::WindowFlags = ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoResize;
+bool drawing::bDraw = true;
 std::string g_welcomeMsg;
 std::vector<std::string> g_modules;
 int g_moduleIndex = 0;
 
 bool g_once = false;
-void Drawing::Active()
+void drawing::Active()
 {
 	bDraw = true;
 }
 
-bool Drawing::isActive()
+bool drawing::isActive()
 {
 	return bDraw == true;
 }
@@ -68,7 +68,7 @@ namespace ImGui {
     }
 }
 
-void Drawing::Draw()
+void drawing::Draw()
 {
 
 	if (isActive())

@@ -255,7 +255,7 @@ void UI::Render()
         ImGui_ImplWin32_NewFrame();
         ImGui::NewFrame();
         {
-            Drawing::Draw();
+            drawing::Draw();
         }
         ImGui::EndFrame();
 
@@ -274,7 +274,7 @@ void UI::Render()
         pSwapChain->Present(1, 0);
 
         #ifndef _WINDLL
-            if (!Drawing::isActive())
+            if (!drawing::isActive())
                 break;
         #endif
     }

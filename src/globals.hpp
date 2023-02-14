@@ -7,7 +7,7 @@
 
 #include "gui/user_interface.hpp"
 #include "utilities/utils.hpp"
-#include "gui/Drawing.h"
+#include "gui/drawing.hpp"
 #include "fonts/fonts.hpp"
 
 

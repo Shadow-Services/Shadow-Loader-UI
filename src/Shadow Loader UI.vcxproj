@@ -148,7 +148,7 @@
   <ItemGroup>
     <ClCompile Include="fonts\storopia.cpp" />
     <ClCompile Include="gui\components\tab.cpp" />
-    <ClCompile Include="gui\Drawing.cpp" />
+    <ClCompile Include="gui\drawing.cpp" />
     <ClCompile Include="gui\user_interface.cpp" />
     <ClCompile Include="ImGui\imgui.cpp" />
     <ClCompile Include="ImGui\imgui_demo.cpp" />
@@ -164,7 +164,7 @@
     <ClInclude Include="fonts\fonts.hpp" />
     <ClInclude Include="globals.hpp" />
     <ClInclude Include="gui\components\components.hpp" />
-    <ClInclude Include="gui\Drawing.h" />
+    <ClInclude Include="gui\drawing.hpp" />
     <ClInclude Include="gui\user_interface.hpp" />
     <ClInclude Include="ImGui\imconfig.h" />
     <ClInclude Include="ImGui\imgui.h" />
