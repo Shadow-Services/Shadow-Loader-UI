@@ -34,6 +34,12 @@
     <Filter Include="Source Files\gui\components">
       <UniqueIdentifier>{7c13d1c6-ec91-46fd-b553-8dff42c6a1ae}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\utilities">
+      <UniqueIdentifier>{ed1a7069-d6b7-4bb7-a9ef-bdc25197cd5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utilities">
+      <UniqueIdentifier>{a808d21e-8ffc-457e-8321-982f179c3835}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -72,8 +78,14 @@
     <ClCompile Include="gui\user_interface.cpp">
       <Filter>Source Files\gui</Filter>
     </ClCompile>
+    <ClCompile Include="gui\loginform.cpp">
+      <Filter>Source Files\gui</Filter>
+    </ClCompile>
     <ClCompile Include="utilities\utils.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="utilities\runners.cpp">
+      <Filter>Source Files\utilities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -119,8 +131,14 @@
     <ClInclude Include="fonts\fonts.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="gui\loginform.hpp">
+      <Filter>Header Files\gui</Filter>
+    </ClInclude>
     <ClInclude Include="utilities\utils.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="utilities\runners.hpp">
+      <Filter>Header Files\utilities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

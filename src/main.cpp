@@ -1,8 +1,14 @@
 #include "globals.hpp"
 #include <Windows.h>
 
-t_Login Login; t_Logout Logout; t_Status GetStatus; t_Username GetUsername; t_Modules GetModules; t_Inject Inject;
-bool g_loggedIn = false;
+
+t_Login Login; 
+t_Logout Logout; 
+t_Status GetStatus; 
+t_Username GetUsername; 
+t_Modules GetModules; 
+t_Inject Inject;
+
 #ifdef _WINDLL
 
 

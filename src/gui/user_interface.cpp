@@ -8,11 +8,6 @@ IDXGISwapChain* UI::pSwapChain = nullptr;
 ID3D11RenderTargetView* UI::pMainRenderTargetView = nullptr;
 ID3D11ShaderResourceView* UI::gtaIcon = nullptr;
 
-bool g_injectionOnce = false;
-bool g_injecting = false;
-bool g_statusWorker = false;
-std::string g_status;
-
 bool UI::CreateDeviceD3D(HWND hWnd)
 {
     DXGI_SWAP_CHAIN_DESC sd;
@@ -127,40 +122,6 @@ LRESULT WINAPI UI::WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
     return ::DefWindowProc(hWnd, msg, wParam, lParam);
 }
 
-std::size_t UI::write_callback(char* in, size_t size, size_t nmemb, std::string* out) {
-    std::size_t total_size = size * nmemb;
-    if (total_size) {
-        out->append(in, total_size);
-        return total_size;
-    }
-    return 0;
-}
-
-bool UI::ModulesCallback(void* data, int n, const char** out_text) {
-    const std::vector<std::string>* v = (std::vector<std::string>*)data;
-    *out_text = (*v)[n].c_str();
-    return true;
-}
-
-void UI::StatusWorker() {
-    while (g_statusWorker) {
-        g_status = std::string(GetStatus());
-        std::this_thread::sleep_for(std::chrono::milliseconds(500));
-    }
-}
-
-void UI::InjectionWorker(char* mod) {
-    if (Inject(mod, false)) {
-        g_statusWorker = false;
-        g_injecting = false;
-        MessageBoxA(0, "Injection successful, please enjoy your game.", "Shadow Client - Inject", MB_OK);
-    }
-
-    else {
-        MessageBoxA(0, "[ERROR] Injection failed, please check logs or open a support ticket.", "Shadow Client - Inject", MB_OK);
-    }
-}
-
 void UI::Render()
 {
     ImGui_ImplWin32_EnableDpiAwareness();
@@ -255,7 +216,14 @@ void UI::Render()
         ImGui_ImplWin32_NewFrame();
         ImGui::NewFrame();
         {
-            drawing::Draw();
+
+            if (::g.window.logged_in) {
+                drawing::Draw();
+            }
+
+            else {
+                loginform::Draw();
+            }
         }
         ImGui::EndFrame();
 

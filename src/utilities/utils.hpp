@@ -21,4 +21,8 @@ extern t_Username GetUsername;
 extern t_Modules GetModules;
 extern t_Inject Inject;
 
-extern bool g_loggedIn;
+class utils
+{
+public:
+	static std::vector<std::string> string_splice(std::string str, std::string_view delimiter);
+};

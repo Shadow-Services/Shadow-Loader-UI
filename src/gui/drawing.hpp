@@ -9,9 +9,6 @@
 class drawing
 {
 private:
-	static LPCSTR lpWindowName;
-	static ImVec2 vWindowSize;
-	static ImGuiWindowFlags WindowFlags;
 	static bool bDraw;
 
 public:

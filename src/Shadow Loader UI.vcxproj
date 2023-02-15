@@ -51,7 +51,7 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -150,6 +150,7 @@
     <ClCompile Include="fonts\storopia.cpp" />
     <ClCompile Include="gui\components\tab.cpp" />
     <ClCompile Include="gui\drawing.cpp" />
+    <ClCompile Include="gui\loginform.cpp" />
     <ClCompile Include="gui\user_interface.cpp" />
     <ClCompile Include="ImGui\imgui.cpp" />
     <ClCompile Include="ImGui\imgui_demo.cpp" />
@@ -159,6 +160,7 @@
     <ClCompile Include="ImGui\imgui_tables.cpp" />
     <ClCompile Include="ImGui\imgui_widgets.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="utilities\runners.cpp" />
     <ClCompile Include="utilities\utils.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +168,7 @@
     <ClInclude Include="globals.hpp" />
     <ClInclude Include="gui\components\components.hpp" />
     <ClInclude Include="gui\drawing.hpp" />
+    <ClInclude Include="gui\loginform.hpp" />
     <ClInclude Include="gui\user_interface.hpp" />
     <ClInclude Include="ImGui\imconfig.h" />
     <ClInclude Include="ImGui\imgui.h" />
@@ -176,6 +179,7 @@
     <ClInclude Include="ImGui\imstb_textedit.h" />
     <ClInclude Include="ImGui\imstb_truetype.h" />
     <ClInclude Include="textures\gta_v_logo.hpp" />
+    <ClInclude Include="utilities\runners.hpp" />
     <ClInclude Include="utilities\utils.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

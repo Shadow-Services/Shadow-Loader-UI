@@ -1,14 +1,7 @@
 #include "drawing.hpp"
 
-LPCSTR drawing::lpWindowName = "Shadow Loader";
-ImVec2 drawing::vWindowSize = { 600, 400 };
-ImGuiWindowFlags drawing::WindowFlags = ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoResize;
 bool drawing::bDraw = true;
-std::string g_welcomeMsg;
-std::vector<std::string> g_modules;
-int g_moduleIndex = 0;
-
-bool g_once = false;
+int selected_tab = 0;
 void drawing::Active()
 { 
 	bDraw = true;
@@ -67,26 +60,43 @@ namespace ImGui {
         return pressed;
     }
 }
-
+bool do_once = false;
 void drawing::Draw()
 {
 
 	if (isActive())
 	{
-		
-		ImGui::SetNextWindowSize(vWindowSize);
+        if (!do_once)
+        {
+            g.injection.module_list = utils::string_splice(std::string(GetModules()), "##");
+            do_once = true;
+        }
+		ImGui::SetNextWindowSize(g.window.vWindowSize);
 		ImGui::SetNextWindowBgAlpha(1.0f);
-		ImGui::Begin(lpWindowName, &bDraw, WindowFlags);
+		ImGui::Begin(g.window.lpWindowName, &bDraw, g.window.WindowFlags);
 		{
-            ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 10.f);
-            ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(1.f, 1.f, 1.f, 0.4f));
-			ImGui::ImageButtonWithText((PVOID)UI::gtaIcon, "     Grand Theft Auto V", ImVec2(116.4f,66.4f), ImVec2(0.f,0.f), ImVec2(1.f,1.f), 1.f);
-            ImGui::PopStyleVar(1);
-            ImGui::PopStyleColor(1);
-            ImGui::Text("Test");
-			ImGui::Text("Welcome back %s", std::string(GetUsername()).c_str());
+            auto draw = ImGui::GetWindowDrawList();
+            ImGuiStyle style = ImGui::GetStyle();
+            ImVec2 windowpos = ImGui::GetWindowPos();
 
-			ImGui::ListBox("", &g_moduleIndex, UI::ModulesCallback, &g_modules, g_modules.size(), (int)12);
+            // Side bar background / line draw
+            draw->AddRectFilled((windowpos + ImVec2(0, 0)), (ImVec2(163, g.window.vWindowSize.y)+ windowpos), ImColor(24, 24, 26), style.WindowRounding, ImDrawFlags_RoundCornersLeft);
+            draw->AddLine((ImVec2(163, 2) + windowpos), (ImVec2(163, g.window.vWindowSize.y - 2) + windowpos), ImColor(1.0f, 1.0f, 1.0f, 0.03f));
+            draw->AddLine((ImVec2( 16, 47) + windowpos), (ImVec2(148, 47) + windowpos), ImColor(1.0f, 1.0f, 1.0f, 0.03f));
+            
+            // Tab Draw Region
+            ImGui::SetCursorPos({ 8, 56 });
+            if (components::tab("Home", selected_tab == 0)) { selected_tab = 0; }
+
+            // Active view draw region
+            ImGui::SetCursorPos({ 165, 18 });
+            ImGui::BeginGroup();
+            ImGui::Text("Test");
+			ImGui::Text("Welcome back %s", GetUsername());
+            ImGui::ListBox("", &g.injection.module_index, runner::module_callback, &g.injection.module_list, g.injection.module_list.size(), 12);
+            ImGui::EndGroup();
+            //ImGui::ImageButtonWithText((PVOID)UI::gtaIcon, "     Grand Theft Auto V", ImVec2(116.4f,66.4f), ImVec2(0.f,0.f), ImVec2(1.f,1.f), 1.f);
+			//ImGui::ListBox("", &g_moduleIndex, UI::ModulesCallback, &g_modules, g_modules.size(), (int)12);
 		}
 		ImGui::End();
 	}
