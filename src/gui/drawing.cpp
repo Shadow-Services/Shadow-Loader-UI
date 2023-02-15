@@ -1,4 +1,5 @@
 #include "drawing.hpp"
+#define IMGUI_DEFINE_MATH_OPERATORS
 
 bool drawing::bDraw = true;
 int selected_tab = 0;

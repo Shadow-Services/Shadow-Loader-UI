@@ -1,8 +1,10 @@
-#define IMGUI_DEFINE_MATH_OPERATORS
+#pragma once
 
 #include <Windows.h>
 
 #include <globals.hpp>
+#include "ImGui/imgui_internal.h"
+#define IMGUI_DEFINE_MATH_OPERATORS
 
 class loginform
 {

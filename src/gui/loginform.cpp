@@ -53,7 +53,7 @@ void loginform::Draw()
 			ImGuiStyle style = ImGui::GetStyle();
 			ImVec2 windowpos = ImGui::GetWindowPos();
 
-			draw->AddRectFilled(windowpos, (g.window.vWindowSize + windowpos), ImColor(12, 12, 12, 255));
+			draw->AddRectFilled(windowpos, ImVec2(g.window.vWindowSize.x + windowpos.x, g.window.vWindowSize.y + windowpos.y), ImColor(12, 12, 12, 255));
 
 			auto tSize = ImGui::CalcTextSize("Shadow Loaders");
 			float tCX = (g.window.vWindowSize.x - tSize.x) / 2;

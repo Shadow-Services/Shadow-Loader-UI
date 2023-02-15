@@ -13,8 +13,6 @@ include(scripts/async-logger.cmake)
 include(scripts/json.cmake)
 include(scripts/cpr.cmake)
 
-message("\nFetching custom modules")
-include(scripts/imgui.cmake)
 # Shadow
 
 message(STATUS "Shadow Loader")
@@ -51,7 +49,7 @@ target_include_directories(Shadow PRIVATE
 )
 
 target_precompile_headers(Shadow PRIVATE "${SRC_DIR}/common.hpp")
-target_link_libraries(Shadow PRIVATE AsyncLogger imgui d3dx11 d3d11)
+target_link_libraries(Shadow PRIVATE AsyncLogger d3dx11 d3d11)
 
 # Warnings as errors
 add_definitions("/wd4005")

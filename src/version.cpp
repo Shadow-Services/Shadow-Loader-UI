@@ -2,8 +2,8 @@
 
 namespace shadow
 {
-    const char* version::GIT_SHA1 = "363ab28ae018c56f83af979d3db3239c6d4da4a3";
+    const char* version::GIT_SHA1 = "516b5eceb350b9564026367854158e92846ca32b-dirty";
     const char* version::GIT_BRANCH = "master";
-    const char* version::GIT_DATE = "Tue Feb 14 18:49:44 2023";
-    const char* version::GIT_COMMIT_SUBJECT = "added runners, fixed the laoder not loading data, and cleaned up a lot";
+    const char* version::GIT_DATE = "Wed Feb 15 14:54:43 2023";
+    const char* version::GIT_COMMIT_SUBJECT = "switched the project to cmake";
 };
